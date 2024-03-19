@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Music Player</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Line Awesome -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Music App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="jumbotron container-fluid">
+    <h1 class="text-center">Music App Using AWS S3 and CloudFront Distribution</h1>
+    <div id="main-content-placeholder" class="container"></div>
+</div>
+<script id="main-template" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="row justify-content-center">
+            {{#each audio}}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <div class="view">
+                        <img class="card-img-top" src="{{image}}" alt="Card image cap" style="height: 200px; object-fit: cover;">
+                        <a href="https://bachataurban.com/" target="_blank" class="mask gradient-card"></a>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="h5 font-weight-bold"><a href="https://bachataurban.com/" target="_blank">{{name}}</a></h5>
+                        <p class="mb-0">{{this.description}}</p>
+                        <div class="audio-controls">
+                            <audio controls style="width: 100%;">
+                                <source src="{{source}}" type="audio/ogg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</script>
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Handlebars JS -->
+<script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+<script>
+    var data = {
+        "audio": [
+            {
+                "source": "https://d30a492z89m6jv.cloudfront.net/Animals.mp3",
+                "name": "Animals",
+                "image": "https://i.scdn.co/image/ab67616d0000b2736abad6915a2216dc18e7e3a7",
+                "description": "Amazing Music"
+            },
+            {
+                "source": "https://d30a492z89m6jv.cloudfront.net/Praise.mp3",
+                "name": "Praise",
+                "image": "https://i.ytimg.com/vi/f2oxGYpuLkw/maxresdefault.jpg",
+                "description": "Amazing Music"
+            }
+        ]
+    };
+
+    $(document).ready(function() {
+        var templateScript = Handlebars.compile($('#main-template').html());
+        $("#main-content-placeholder").html(templateScript(data));
+    });
+
+    Handlebars.registerHelper('if_cond', function(v1, operator, v2, options) {
+        switch (operator) {
+            case '==':
+                return (v1 == v2) ? options.fn(this) : options.inverse(this);
+            case '===':
+                return (v1 === v2) ? options.fn(this) : options.inverse(this);
+            case '!=':
+                return (v1 != v2) ? options.fn(this) : options.inverse(this);
+            case '!==':
+                return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+            case '<':
+                return (v1 < v2) ? options.fn(this) : options.inverse(this);
+            case '<=':
+                return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+            case '>':
+                return (v1 > v2) ? options.fn(this) : options.inverse(this);
+            case '>=':
+                return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+            case '&&':
+                return (v1 && v2) ? options.fn(this) : options.inverse(this);
+            case '||':
+                return (v1 || v2) ? options.fn(this) : options.inverse(this);
+            default:
+                return options.inverse(this);
+        }
+    });
+</script>
+</body>
+</html>
