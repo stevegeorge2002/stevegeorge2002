@@ -2,7 +2,7 @@
 
 Welcome to Cloud Music Player, a web application for streaming your favorite music from anywhere, anytime! 🚀
 
-![Cloud Music Player]Cloud Music Player.jpg
+![Cloud Music Player](https://stevegeorge2002.github.io/stevegeorge2002/Cloud%20Music%20Player.jpg)
 
 ## About
 
@@ -31,13 +31,13 @@ Cloud Music Player is a web-based music player that allows users to access their
 
 ## How to Use
 
-To use Cloud Music Player, simply visit [the website](https://stevegeorge2002.github.io/stevegeorge2002/) and sign up or log in using your preferred authentication method.
+To use Cloud Music Player, simply visit [Cloud Music Player](https://stevegeorge2002.github.io/stevegeorge2002/) and sign up or log in using your preferred authentication method.
 
 ## Installation
 
 To run Cloud Music Player locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your_username/cloud-music-player.git`
+1. Clone the repository: `git clone https://github.com/stevegeorge2002/stevegeorge2002.git`
 2. Install dependencies: `npm install`
 3. Set up environment variables (e.g., API keys, database connection strings)
 4. Start the server: `npm start`
