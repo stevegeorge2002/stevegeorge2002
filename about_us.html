@@ -4,54 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Cloud Music Player</title>
+    <!-- Set website icon -->
+    <link rel="icon" href="Cloud Music Player.jpg" type="image/jpg">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Cloud Music Player">
+    <meta property="og:description" content="Listen to your favorite music with Cloud Music Player">
+    <meta property="og:image" content="https://raw.githubusercontent.com/stevegeorge2002/stevegeorge2002/main/Cloud%20Music%20Player.jpg">
+    <meta property="og:url" content="https://stevegeorge2002.github.io/stevegeorge2002/">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS for navbar and jumbotron -->
+    <link rel="stylesheet" href="custom.css">
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
-    </header>
-    <div class="container">
-        <p>Welcome to Cloud Music Player! We are dedicated to providing you with a seamless music listening experience. Our platform allows you to access your favorite music from anywhere in the world, at any time. Whether you're at home, in the car, or on the go, Cloud Music Player ensures that your music is always with you.</p>
-        <p>Our mission is to make music accessible to everyone, regardless of location or device. With our innovative technology and user-friendly interface, we strive to enhance your music listening journey.</p>
-        <p>Thank you for choosing Cloud Music Player!</p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Logo and App Name -->
+        <a class="navbar-brand" href="#">
+            <img src="Cloud Music Player.jpg" alt="Logo" style="height: 30px; margin-right: 10px;"> 
+            Music App
+        </a>
+        <!-- Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron container-fluid">
+        <h1 class="text-center">About Us</h1>
+        <div class="container">
+            <p>Welcome to Cloud Music Player! We are dedicated to providing you with a seamless music listening experience. Our platform allows you to access your favorite music from anywhere in the world, at any time. Whether you're at home, in the car, or on the go, Cloud Music Player ensures that your music is always with you.</p>
+            <p>Our mission is to make music accessible to everyone, regardless of location or device. With our innovative technology and user-friendly interface, we strive to enhance your music listening journey.</p>
+            <p>Thank you for choosing Cloud Music Player!</p>
+        </div>
     </div>
     <!-- Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
