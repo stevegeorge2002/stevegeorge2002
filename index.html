@@ -150,7 +150,7 @@
     });
 
     function fetchYouTubeThumbnail(songName) {
-    fetch('config_template.json')
+    fetch('config.json')
         .then(response => response.json())
         .then(config => {
             var apiKey = config.apiKey;
